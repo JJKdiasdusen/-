@@ -12,8 +12,22 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+        }
+        /* Стандартты емес анимацияларды қолмен қосу */
+        .fade-in-standard {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    <script>
+        // Браузерде "process is not defined" қатесін болдырмау үшін:
+        window.process = { env: { API_KEY: "" } };
+    </script>
 <script type="importmap">
 {
   "imports": {
@@ -27,5 +41,7 @@
 </head>
 <body>
     <div id="root"></div>
+    <!-- Негізгі скриптті шақыру міндетті -->
+    <script type="module" src="./index.tsx"></script>
 </body>
 </html>
